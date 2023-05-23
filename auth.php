@@ -1,5 +1,4 @@
 <?
-$link = mysqli_connect('localhost', 'root', 'root', 'skillbox');
 if ($_POST['ok']){
     $login = $_POST['login'];
     $password = $_POST['password'];
@@ -8,7 +7,7 @@ if ($_POST['ok']){
         $users = mysqli_fetch_assoc($result);
         if (password_verify($password, $users['password'])) {
             setcookie('id',$users['id'],time()+60*60*24);
-            $new_url='index.php';
+            $new_url='courses.php';
             header('Location: '.$new_url);
         } else {
             echo "Пароль не верный";
@@ -27,19 +26,27 @@ include "nav.php";
 
 
 
-    <div class= "title">
-    <h2 align="center">Авторизация</h2>
-    </div>
-    <form method="POST">
-        <div class="label-float">
-            <input type="text" name="login" placeholder=" "/>
-            <label>Логин</label>
-        </div>
-        <div class="label-float">
-            <input type="text" name="password" placeholder=" "/>
-            <label>Пароль</label>
-        </div>
-        
-        <h3><input type="submit" name="ok"></h3>
-    </form>
+    
+<div class="auth-block">
+	<div class="auth">
+		<div class= "title">
+	        <h2 align="center">Авторизация</h2>
+	    </div>
 
+	    <form method="POST" class="auth-block">
+	        <div class="label-float">
+	            <input type="text" name="login" placeholder=" "/>
+	            <label>Логин</label>
+	        </div>
+	        <div class="label-float">
+	            <input type="text" name="password" placeholder=" "/>
+	            <label>Пароль</label>
+	        </div>
+	        
+	        <div class="box-form">
+	        	<h3><input type="submit" name="ok" class="btn2"></h3>
+	        </div>
+	    </form>
+	    <p>Нет аккаунта? <a href="reg.php" class="link-animate">Зарегистрироваться</a></p>
+	</div>
+</div>
