@@ -7,7 +7,7 @@
 			<li><a href="profession.php">Профессии</a></li>
 			<li><a href="article.php">Статьи</a></li>
 			<li><a href="exercise.php">Задание</a></li>
-			<li><a href="../courses.php">Главная</a></li>
+			<li><a href="../index.php">Главная</a></li>
 		</ul>
 	</div>
 		<p>Все права защищены</p> 

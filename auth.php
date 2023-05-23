@@ -1,4 +1,7 @@
 <?
+include "nav.php";
+?>
+<?
 if ($_POST['ok']){
     $login = $_POST['login'];
     $password = $_POST['password'];
@@ -7,7 +10,7 @@ if ($_POST['ok']){
         $users = mysqli_fetch_assoc($result);
         if (password_verify($password, $users['password'])) {
             setcookie('id',$users['id'],time()+60*60*24);
-            $new_url='courses.php';
+            $new_url='index.php';
             header('Location: '.$new_url);
         } else {
             echo "Пароль не верный";
@@ -16,9 +19,6 @@ if ($_POST['ok']){
         echo "Логин или пароль не верный";
     }
 }
-?>
-<?
-include "nav.php";
 ?>
 
 

@@ -41,7 +41,7 @@ if (isset($_GET['logout'])) {
 			<a href="#" class="navbar-brand">Skypro</a>
 			<div class="navbar-wrap">
 				<ul class="navbar-menu">
-					<li><a href="courses.php">Курсы</a></li>
+					<li><a href="index.php">Курсы</a></li>
 					<li><a href="article.php">Статьи</a></li>
 					<li><a href="teacher.php">Наши учителя</a></li>
 					<li>
